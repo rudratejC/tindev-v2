@@ -1,0 +1,16 @@
+.cardWrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 70px;
+  width: 450px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.buttonWrapper > button {
+  margin-left: 10px;
+}

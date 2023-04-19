@@ -1,0 +1,103 @@
+.education {
+  display: flex;
+  width: 80%;
+  margin: 30px auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  padding: 40px;
+}
+
+.heading {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading > div {
+  display: flex;
+}
+
+.heading > div > h3 {
+  margin-left: 25px;
+  font-weight: bold;
+}
+
+.educationCard {
+  display: flex;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.educationCard:hover {
+  background-color: #302f2fb0;
+}
+
+.instituteName {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.designation {
+  font-weight: bold;
+  margin-top: 5px;
+  color: gray;
+  font-size: 0.9rem;
+}
+.duration {
+  color: grey;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.grades {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.educationAvatar {
+  height: 100px;
+  width: 100px;
+  margin-right: 30px;
+}
+
+.controlButtons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.iconButton {
+  height: 35px;
+  width: 35px;
+  margin-left: 25px;
+}
+
+.editInput {
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 40%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.nextButton {
+  position: relative;
+
+  left: 870px;
+  top: 10px;
+}
+
+.education hr {
+  border: 1px solid #262626;
+  border-radius: 30px;
+  width: 100%;
+  margin: 30px 0;
+}

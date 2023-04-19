@@ -1,0 +1,28 @@
+.chatCard {
+  background: #1d1d1d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  width: 700px;
+  margin: 10px;
+}
+
+.chatCardContainer {
+  position: relative;
+  width: 100%;
+}
+
+.senderCard {
+  border-radius: 20px 20px 20px 20px;
+  background: #5a5757;
+  /* position: absolute; */
+  right: 10px;
+}
+
+.recieverCard {
+  border-radius: 20px 20px 20px 0px;
+  /* position: absolute; */
+
+  left: 10px;
+}
