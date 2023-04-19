@@ -1,0 +1,80 @@
+.BasicInfoCard {
+  display: flex;
+  width: 80%;
+  margin: 30px auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.BasicInfoCard > .flexBox:last-child {
+  margin-bottom: 0;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 95%;
+}
+
+.basicInfoTab {
+  display: flex;
+  width: 40%;
+  max-width: 50%;
+  align-items: center;
+}
+
+.basicInfoTab > div {
+  display: flex;
+  margin-left: 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-wrap: anywhere;
+}
+
+.basicInfoTab > div p {
+  font-weight: bold;
+  font-size: small;
+}
+
+.basicInfoTab > div > h5 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.basicInfoTab .iconButton {
+  height: 35px;
+  width: 35px;
+  margin-left: 25px;
+  position: relative;
+  top: 10px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: small;
+  color: white;
+  font-weight: bold;
+}
+
+.svgIcon {
+  height: 40px;
+  width: 40px;
+}
+
+.infoInput {
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.nextButton {
+  position: relative;
+  left: 860px;
+  /* bottom: 30px; */
+}

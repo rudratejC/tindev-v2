@@ -1,0 +1,37 @@
+.responseTile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  flex: 0.7;
+}
+
+.responseActionContainer {
+  display: flex;
+  flex: 0.3;
+  justify-content: space-evenly;
+}
+
+.responseAction {
+  height: 40px;
+  width: 40px;
+}
+
+.accept {
+  background-color: #262626;
+}
+
+.reject {
+  background-color: red;
+}
+
+.accept:hover {
+  background-color: greenyellow;
+}
+
+.reject:hover {
+  background-color: rgb(192, 1, 1);
+}
