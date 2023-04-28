@@ -34,7 +34,7 @@ const Wallet = () => {
   const [chatData, setChatData] = useState([]);
   const [chatText, setchatText] = useState("");
   const [balanceAmt, setbalanceAmt] = useState(0);
-  const [ether, setether] = useState(0);
+  const [ether, setether] = useState();
   var qss;
   var name = `${openMsg.creatorName}'s Project`;
 
@@ -147,49 +147,59 @@ const Wallet = () => {
   return (
     <>
       <div className={styles.chatRoom}>
-        <div className={styles.header}>
-          {/* <UserHeader username={heading} designation="" /> */}
-        </div>
         <div className={styles.roomContainer}>
-          <div>
-            <h1>Wallet Balance : {balanceAmt}</h1>
-            <hr />
+          <div className={styles.header}>
+            <UserHeader
+              className={styles.userHeader}
+              username={currUser.username}
+              designation={currUser.email}
+            />
+            <h4>{`Balance: ${(Math.round(balanceAmt * 100) / 100).toFixed(
+              2
+            )}`}</h4>
+          </div>
+          <div className={styles.addWalletContainer}>
             <h3>Add Balance to Wallet</h3>
-            <hr />
-            <Input
-              type="number"
-              value={ether}
-              placeholder="Enter Amount"
-              className={styles.searchInput}
-              onChange={(e) => setether(e.target.value)}
-            />
-            <hr />
-
-            <Button
-              text="Add"
-              onClick={() => {
-                startPayment();
-              }}
-            />
-
-            <hr />
-
+            <div className={styles.addWalletInputContainer}>
+              <Input
+                type="number"
+                value={ether}
+                placeholder="Enter Amount"
+                className={styles.searchInput}
+                onChange={(e) => setether(e.target.value)}
+              />
+              <Button
+                className={styles.addMoney}
+                text="Add"
+                onClick={() => {
+                  startPayment();
+                }}
+              />
+            </div>
+          </div>
+          <div className={styles.transactionHistoryContainer}>
             <h3>Transactions</h3>
-            {chatData &&
-              chatData.map((chat) => {
-                return (
-                  <TxnCard>
-                    {"Amount: " +
-                      chat.data.amount +
-                      "  transaction type:  " +
-                      chat.data.type +
-                      " "}
-                    {chat.data.type === "credit"
-                      ? " through Metamask"
-                      : " For Post"}
-                  </TxnCard>
-                );
-              })}
+            <div className={styles.transactionHistory}>
+              {chatData &&
+                chatData.map((chat) => {
+                  return (
+                    <TxnCard className={styles.transactionCard}>
+                      <p className={styles.amount}>
+                        Amount: <span>{chat.data.amount}</span>
+                      </p>
+                      {"    "}
+                      <p className={styles.amount}>
+                        Type:{" "}
+                        <span>{`${chat.data.type} ${
+                          chat.data.type === "credit"
+                            ? " through Metamask"
+                            : " For Post"
+                        }`}</span>
+                      </p>
+                    </TxnCard>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </div>

@@ -8,7 +8,6 @@ import Button from "../Shared/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { create } from "ipfs-http-client";
-// const ipfsClient = require("ipfs-http-client");
 import {
   addDoc,
   setDoc,
@@ -107,13 +106,21 @@ const ChatRoom = () => {
         <div className={styles.roomContainer}>
           {chatData.map((chat) => {
             return (
-              <ChatCard isMy={currUser.username === chat.data.sentBy}>
-                {chat.data.sentBy + ":  " + chat.data.text}
-              </ChatCard>
+              <div
+                className={`${styles.chatCardContainer} ${
+                  currUser.username === chat.data.sentBy
+                    ? styles.senderMsg
+                    : styles.recieverMsg
+                }`}
+              >
+                <ChatCard isMy={currUser.username === chat.data.sentBy}>
+                  {chat.data.sentBy + ":  " + chat.data.text}
+                </ChatCard>
+              </div>
             );
           })}
         </div>
-        <div>
+        <div className={styles.inputContainer}>
           <Input
             type="text"
             value={chatText}
@@ -149,6 +156,7 @@ const ChatRoom = () => {
               addChat();
               setchatText("");
             }}
+            className={styles.sendButton}
           />
         </div>
       </div>

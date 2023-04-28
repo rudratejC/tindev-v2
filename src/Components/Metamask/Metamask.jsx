@@ -26,7 +26,6 @@ const Metamask = () => {
   const signin = async () => {
     // const email = "bhardik786@gmail.com";
     // const password = "CortanaAndSiri@1";
-
     const user = await AuthService.signIn({ email, password });
     if (user) dispatch(userActions.setUser({ user }));
   };
